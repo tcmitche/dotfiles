@@ -1,0 +1,1 @@
+SBT_OPTS="-Xmx2048M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
