@@ -1,22 +1,13 @@
 #!/bin/bash
 
 files=(
-# mpd/mpd.conf
-ackrc
-irbrc
-dircolors
-zshenv
-vim
+oh-my-zsh/themes/travis.zsh-theme
+vim/colors/araxia.vim
+gitconfig
+inputrc
+sbtconfig
 vimrc
 zshrc
-bashrc
-bash_profile
-tmux.conf
-# gitconfig
-# gitignore_global
-# hgrc
-inputrc
-# welcome
 )
 
 SetupLink() {
