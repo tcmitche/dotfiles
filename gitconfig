@@ -1,0 +1,20 @@
+[user]
+	name = Travis Mitchell
+	email = contact@traviscmitchell.com
+[core]
+	excludesfile = /Users/travis/.gitignore_global
+    whitespace = trailing-space
+	editor = vim
+[apply]
+    whitespace = warn
+[mergetool "sublime"]
+	cmd = subl -w $MERGED
+	trustExitCode = false
+[merge]
+	tool = bc3
+[color]
+	ui = true
+[push]
+	default = current
+[alias]
+	l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
