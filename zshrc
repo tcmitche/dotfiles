@@ -74,4 +74,3 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias fixvagrant='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
-alias gwip='git add -A :/; git ls-files --deleted -z | xargs -0 git rm; git commit -m "--wip--"'
