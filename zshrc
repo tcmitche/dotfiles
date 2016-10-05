@@ -47,12 +47,13 @@ ZSH_THEME="travis"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-prompt)
 
+source "$HOME/.venv/bin/activate"
+
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.credentials
+# source $HOME/.credentials
 # User configuration
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -71,6 +72,19 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 alias fixvagrant='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux new-session -A -s main
+
+
+export NVM_DIR="/home/travis/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+alias python2=`which python`
+alias python=`which python3`
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+

@@ -8,6 +8,7 @@ inputrc
 sbtconfig
 vimrc
 zshrc
+tmux.conf
 )
 
 SetupLink() {

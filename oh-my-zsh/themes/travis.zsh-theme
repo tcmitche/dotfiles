@@ -30,7 +30,7 @@ Git_Prompt_Info() {
     echo $INFO
 }
 PROMPT='%F{green}%2c%F{blue} [%f '
-RPROMPT='$(Git_Prompt_Info)$(Git_Prompt_Status) %F{blue}] %F{green}%D{%L:%M}'
+RPROMPT='$(Git_Prompt_Info)$(Git_Prompt_Status) %F{blue}] %F{green}%D{%K:%M}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
