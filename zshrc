@@ -47,8 +47,6 @@ ZSH_THEME="travis"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-prompt)
 
-source "$HOME/.venv/bin/activate"
-
 source $ZSH/oh-my-zsh.sh
 
 # source $HOME/.credentials
@@ -73,6 +71,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
 alias fixvagrant='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+alias venv='python3 -m venv ./venv && source ./venv/bin/activate'
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
@@ -82,12 +81,15 @@ alias fixvagrant='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 export NVM_DIR="/home/travis/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-alias python2=`which python`
-alias python=`which python3`
-
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Development/gocode
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
 
