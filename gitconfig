@@ -2,7 +2,7 @@
         name = Travis Mitchell
         email = tcmitche@users.noreply.github.com
 [core]
-        excludesfile = /Users/travis/.gitignore_global
+        excludesfile = /home/travis/.gitignore_global
         whitespace = trailing-space
         editor = vim
 [apply]

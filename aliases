@@ -1,0 +1,7 @@
+
+alias fixvagrant='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+alias activate='. ./venv/bin/activate'
+alias venv='python3 -m venv ./venv && source ./venv/bin/activate && pip install flake8'
+alias venv2='virtualenv venv -p python2 && source ./venv/bin/activate && pip install flake8'
+alias at='tmux new-session -A -s main'
+alias zzz='systemctl suspend'
