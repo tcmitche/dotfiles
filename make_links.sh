@@ -9,6 +9,7 @@ sbtconfig
 vimrc
 zshrc
 tmux.conf
+aliases
 )
 
 SetupLink() {
